@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- custom style css file -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- daisyUI cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#F4F5F7] h-full outfit">
+    <section class="bg-white rounded-b-3xl">
+      <!-- home menu bar -->
+      <div
+        class="flex items-center justify-between max-w-lg m-auto border-b-2 border-[#bdbdbd80] p-6"
+      >
+        <div class="flex items-center">
+          <div>
+            <img src="assets/Group.png" alt="" class="w-14" />
+          </div>
+          <div class="ml-2 flex flex-col gap-1">
+            <p class="font-bold text-lg">$ <span>45000</span></p>
+            <p class="font-normal text-[#08080880]">Available Balance</p>
+          </div>
+        </div>
+        <div>
+          <button class="btn text-[#08080880] font-normal rounded-lg">
+            <i
+              class="fa-solid fa-arrow-right-from-bracket rotate-180 text-[#0808088f]"
+            ></i
+            >Log Out
+          </button>
+        </div>
+      </div>
+
+      <!-- home welcome section -->
+      <div class="flex flex-col justify-between max-w-lg m-auto p-6 gap-3">
+        <h1 class="font-bold text-2xl">🔥 Welcome to Payooo!</h1>
+        <p class="text-sm text-[#08080880]">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+      </div>
+
+      <!-- home card section -->
+      <div class="grid grid-rows-2 grid-cols-3 gap-4 max-w-lg m-auto p-6">
+        <div
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+        >
+          <img src="assets/wallet1.png" alt="" />
+          <span class="text-xs text-[#080808b3]">Add Money</span>
+        </div>
+        <div
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+        >
+          <img src="assets/send1.png" alt="" />
+          <span class="text-xs text-[#080808b3]">Cashout</span>
+        </div>
+        <div
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+        >
+          <img src="assets/money1.png" alt="" />
+          <span class="text-xs text-[#080808b3]">Transfer Money</span>
+        </div>
+        <div
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+        >
+          <img src="assets/bonus1.png" alt="" />
+          <span class="text-xs text-[#080808b3]">Get Bonus</span>
+        </div>
+        <div
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+        >
+          <img src="assets/purse1.png" alt="" />
+          <span class="text-xs text-[#080808b3]">Pay Bill</span>
+        </div>
+        <div
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+        >
+          <img src="assets/transaction1.png" alt="" />
+          <span class="text-xs text-[#080808b3]">Transactions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- sub option section -->
+    <section class="flex flex-col gap-5 max-w-lg m-auto p-6">
+      <div>
+        <h3 class="font-semibold text-lg">Add Money</h3>
+      </div>
+      <div class="flex flex-col rounded-3xl bg-white p-6">
+        <form action="" class="flex flex-col gap-3">
+          <div class="flex flex-col">
+            <label for="">Select A Bank</label>
+            <select class="select bg-[#F4F5F7] mt-2 rounded-3xl w-full">
+              <option disabled selected>Select bank</option>
+              <option>IBBL bank</option>
+              <option>Dutch bangla bank</option>
+              <option>City bank</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label for="">Bank Account Number</label>
+            <input
+              type="text"
+              placeholder="Enter 11 digit account number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Amount to Add</label>
+            <input
+              type="text"
+              placeholder="Add Amount to withdraw"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Pin Number</label>
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <button class="btn bg-[#0874F2] rounded-3xl text-white" id="formBtn">
+            Add Money
+          </button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
