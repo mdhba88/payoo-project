@@ -23,7 +23,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[#F4F5F7] h-full outfit">
+  <body class="bg-[#F4F5F7] h-[100vh] outfit">
     <section class="bg-white rounded-b-3xl">
       <!-- home menu bar -->
       <div
@@ -63,12 +63,14 @@
       <div class="grid grid-rows-2 grid-cols-3 gap-4 max-w-lg m-auto p-6">
         <div
           class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+          id="addMoneyCard"
         >
           <img src="assets/wallet1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Add Money</span>
         </div>
         <div
           class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+          id="cashOutCard"
         >
           <img src="assets/send1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Cashout</span>
@@ -100,9 +102,9 @@
       </div>
     </section>
 
-    <!-- sub option input section -->
-    <section class="flex flex-col gap-5 max-w-lg m-auto p-6">
-      <div>
+    <!-- add money sub (input) section -->
+    <section class="flex flex-col max-w-lg m-auto p-6" id="addMoneySection">
+      <div class="mb-5">
         <h3 class="font-semibold text-lg">Add Money</h3>
       </div>
       <div class="flex flex-col rounded-3xl bg-white p-6">
@@ -156,7 +158,52 @@
       </div>
     </section>
 
+    <!-- cash out sub (input) section -->
+    <section class="flex flex-col max-w-lg m-auto p-6" id="cashOutSection">
+      <div class="mb-5">
+        <h3 class="font-semibold text-lg">Cash Out</h3>
+      </div>
+      <div class="flex flex-col rounded-3xl bg-white p-6">
+        <form action="" class="flex flex-col gap-3">
+          <div class="flex flex-col">
+            <label for="">Agent Number</label>
+            <input
+              type="text"
+              placeholder="Enter 11 digit account number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+              id="agentNumber"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Amount</label>
+            <input
+              type="text"
+              placeholder="Add Amount to withdraw"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+              id="cashOutAmount"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Pin Number</label>
+            <input
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+              id="cashOutPin"
+            />
+          </div>
+          <button
+            class="btn bg-[#0874F2] rounded-3xl text-white"
+            id="cashOutBtn"
+          >
+            Withdraw Money
+          </button>
+        </form>
+      </div>
+    </section>
+
     <!-- home javascript file -->
-    <script src="home.js"></script>
+    <script src="add-money.js"></script>
+    <script src="cash-out.js"></script>
   </body>
 </html>

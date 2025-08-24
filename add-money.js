@@ -1,8 +1,11 @@
+// by default this section is hidden
+document.getElementById("addMoneySection").style.display = "none";
+
+// add money section
 document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   e.preventDefault();
-  console.log("clicked");
 
-  //   main balance
+  //   main available balance
   const availableBalance = parseInt(
     document.getElementById("availableBalance").innerText
   );
@@ -10,7 +13,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   //   fixed pin
   const fixedPin = 1234;
 
-  //   sub items for main add money section
+  //   sub items for add money section
   const bankSelection = document.getElementById("bankSelection").value;
   const bankNumber = document.getElementById("bankNumber").value;
   const addAmount = parseInt(document.getElementById("addAmount").value);
@@ -32,6 +35,10 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   const totalNewAvailableBalance = availableBalance + addAmount;
   document.getElementById("availableBalance").innerText =
     totalNewAvailableBalance;
+});
 
-  //   console.log(bankSelection, bankNumber, addAmount, addPin, availableBalance);
+// add money toggling
+document.getElementById("addMoneyCard").addEventListener("click", function () {
+  document.getElementById("addMoneySection").style.display = "block";
+  document.getElementById("cashOutSection").style.display = "none";
 });
