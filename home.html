@@ -34,7 +34,9 @@
             <img src="assets/Group.png" alt="" class="w-14" />
           </div>
           <div class="ml-2 flex flex-col gap-1">
-            <p class="font-bold text-lg">$ <span>45000</span></p>
+            <p class="font-bold text-lg">
+              $<span id="availableBalance">45000</span>
+            </p>
             <p class="font-normal text-[#08080880]">Available Balance</p>
           </div>
         </div>
@@ -98,7 +100,7 @@
       </div>
     </section>
 
-    <!-- sub option section -->
+    <!-- sub option input section -->
     <section class="flex flex-col gap-5 max-w-lg m-auto p-6">
       <div>
         <h3 class="font-semibold text-lg">Add Money</h3>
@@ -107,7 +109,10 @@
         <form action="" class="flex flex-col gap-3">
           <div class="flex flex-col">
             <label for="">Select A Bank</label>
-            <select class="select bg-[#F4F5F7] mt-2 rounded-3xl w-full">
+            <select
+              class="select bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+              id="bankSelection"
+            >
               <option disabled selected>Select bank</option>
               <option>IBBL bank</option>
               <option>Dutch bangla bank</option>
@@ -120,6 +125,7 @@
               type="text"
               placeholder="Enter 11 digit account number"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+              id="bankNumber"
             />
           </div>
           <div class="flex flex-col">
@@ -128,6 +134,7 @@
               type="text"
               placeholder="Add Amount to withdraw"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+              id="addAmount"
             />
           </div>
           <div class="flex flex-col">
@@ -136,13 +143,20 @@
               type="text"
               placeholder="Enter 4 digit pin number"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+              id="addPin"
             />
           </div>
-          <button class="btn bg-[#0874F2] rounded-3xl text-white" id="formBtn">
+          <button
+            class="btn bg-[#0874F2] rounded-3xl text-white"
+            id="addMoneyBtn"
+          >
             Add Money
           </button>
         </form>
       </div>
     </section>
+
+    <!-- home javascript file -->
+    <script src="home.js"></script>
   </body>
 </html>
