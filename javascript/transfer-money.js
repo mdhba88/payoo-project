@@ -19,7 +19,10 @@ document.getElementById("transferBtn").addEventListener("click", function (e) {
 
   // comparison in number and four pin for matching. when is matching then the value is return
   if (userAccountNumber.length === 11 && transferPin.length === 4) {
-    window.location.href = "home.html";
+    //   transfer money calculation
+    const totalNewAvailableAmount = mainAvailableBalance - transferAmount;
+    document.getElementById("availableBalance").innerText =
+      totalNewAvailableAmount;
   } else if (userAccountNumber.length !== 11) {
     alert("Write your valid Number");
   } else if (transferPin.length !== 4) {
@@ -27,11 +30,6 @@ document.getElementById("transferBtn").addEventListener("click", function (e) {
   } else {
     alert("Write your valid number and 4Pin");
   }
-
-  //   transfer money calculation
-  const totalNewAvailableAmount = mainAvailableBalance - transferAmount;
-  document.getElementById("availableBalance").innerText =
-    totalNewAvailableAmount;
 });
 
 // transfer money toggling

@@ -18,7 +18,10 @@ document.getElementById("payBtn").addEventListener("click", function (e) {
 
   // comparison in number and four pin for matching. when is matching then the value is return
   if (payBankNumber.length === 11 && payPin.length === 4) {
-    window.location.href = "home.html";
+    // new balance calculation and put it to main balance
+    const totalNewAvailableBalance = availableBalance - payAmount;
+    document.getElementById("availableBalance").innerText =
+      totalNewAvailableBalance;
   } else if (payBankNumber.length !== 11) {
     alert("Write your valid Number");
   } else if (payPin.length !== 4) {
@@ -26,11 +29,6 @@ document.getElementById("payBtn").addEventListener("click", function (e) {
   } else {
     alert("Write your valid number and 4Pin");
   }
-
-  // new balance calculation and put it to main balance
-  const totalNewAvailableBalance = availableBalance - payAmount;
-  document.getElementById("availableBalance").innerText =
-    totalNewAvailableBalance;
 });
 
 // pay bill toggling

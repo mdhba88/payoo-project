@@ -19,7 +19,10 @@ document.getElementById("cashOutBtn").addEventListener("click", function (e) {
 
   // comparison in number and four pin for matching. when is matching then the value is return
   if (agentNumber.length === 11 && cashOutPin.length === 4) {
-    window.location.href = "home.html";
+    // cash out calculation
+    const totalNewAvailableAmount = mainAvailableBalance - cashOutAmount;
+    document.getElementById("availableBalance").innerText =
+      totalNewAvailableAmount;
   } else if (agentNumber.length !== 11) {
     alert("Write your valid Number");
   } else if (cashOutPin.length !== 4) {
@@ -27,11 +30,6 @@ document.getElementById("cashOutBtn").addEventListener("click", function (e) {
   } else {
     alert("Write your valid number and 4Pin");
   }
-
-  // cash out calculation
-  const totalNewAvailableAmount = mainAvailableBalance - cashOutAmount;
-  document.getElementById("availableBalance").innerText =
-    totalNewAvailableAmount;
 });
 
 // cash out toggling

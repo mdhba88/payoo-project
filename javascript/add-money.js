@@ -5,12 +5,12 @@ document.getElementById("addMoneySection").style.display = "none";
 document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   e.preventDefault();
 
-  //   main available balance
+  // main available balance
   const availableBalance = parseInt(
     document.getElementById("availableBalance").innerText
   );
 
-  //   sub items for add money section
+  // sub items for add money section
   const bankSelection = document.getElementById("bankSelection").value;
   const bankNumber = document.getElementById("bankNumber").value;
   const addAmount = parseInt(document.getElementById("addAmount").value);
@@ -18,7 +18,10 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
 
   // comparison in number and four pin for matching. when is matching then the value is return
   if (bankNumber.length === 11 && addPin.length === 4) {
-    window.location.href = "home.html";
+    // new balance calculation and put it to main balance
+    const totalNewAvailableBalance = availableBalance + addAmount;
+    document.getElementById("availableBalance").innerText =
+      totalNewAvailableBalance;
   } else if (bankNumber.length !== 11) {
     alert("Write your valid Number");
   } else if (addPin.length !== 4) {
@@ -26,11 +29,6 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   } else {
     alert("Write your valid number and 4Pin");
   }
-
-  //   new balance calculation and put it to main balance
-  const totalNewAvailableBalance = availableBalance + addAmount;
-  document.getElementById("availableBalance").innerText =
-    totalNewAvailableBalance;
 });
 
 // add money toggling

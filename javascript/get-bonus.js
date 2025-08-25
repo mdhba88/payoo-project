@@ -14,18 +14,18 @@ document.getElementById("getBonusBtn").addEventListener("click", function (e) {
   const getBonusCoupon = document.getElementById("getBonusCoupon").value;
 
   // condition for bank account number, tips: When the number has to be 11, it cannot be more or less than that used !== this condition
-  if (getBonusCoupon.length !== 4) {
+  if (getBonusCoupon.length >= 0) {
+    // coupon convert to the number
+    const getBonusIntConvert = parseInt(getBonusCoupon);
+
+    // get bonus calculation
+    const totalNewAvailableAmount = mainAvailableBalance + getBonusIntConvert;
+    document.getElementById("availableBalance").innerText =
+      totalNewAvailableAmount;
+  } else {
     alert("Please provide valid coupon number");
     return;
   }
-
-  // coupon convert to the number
-  const getBonusIntConvert = parseInt(getBonusCoupon);
-
-  // get bonus calculation
-  const totalNewAvailableAmount = mainAvailableBalance + getBonusIntConvert;
-  document.getElementById("availableBalance").innerText =
-    totalNewAvailableAmount;
 });
 
 // get bonus toggling
