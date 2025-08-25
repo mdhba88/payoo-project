@@ -23,7 +23,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-[#F4F5F7] h-[100vh] outfit">
+  <body class="bg-[#F4F5F7] min-h-[100vh] outfit">
     <section class="bg-white rounded-b-3xl">
       <!-- home menu bar -->
       <div
@@ -41,7 +41,10 @@
           </div>
         </div>
         <div>
-          <button class="btn text-[#08080880] font-normal rounded-lg">
+          <button
+            id="logOutBtn"
+            class="btn text-[#08080880] font-normal rounded-lg"
+          >
             <i
               class="fa-solid fa-arrow-right-from-bracket rotate-180 text-[#0808088f]"
             ></i
@@ -62,39 +65,43 @@
       <!-- home card section -->
       <div class="grid grid-rows-2 grid-cols-3 gap-4 max-w-lg m-auto p-6">
         <div
-          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-3 rounded-xl px-1 py-3 hover:border-[#0874F2] hover:bg-[#F3F8FE] hover:font-bold hover:text-[#0874F2] hover:cursor-pointer"
           id="addMoneyCard"
         >
           <img src="assets/wallet1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Add Money</span>
         </div>
         <div
-          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
           id="cashOutCard"
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-3 rounded-xl px-1 py-3 hover:border-[#0874F2] hover:bg-[#F3F8FE] hover:font-bold hover:text-[#0874F2] hover:cursor-pointer"
         >
           <img src="assets/send1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Cashout</span>
         </div>
         <div
-          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+          id="transferCard"
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-3 rounded-xl px-1 py-3 hover:border-[#0874F2] hover:bg-[#F3F8FE] hover:font-bold hover:text-[#0874F2] hover:cursor-pointer"
         >
           <img src="assets/money1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Transfer Money</span>
         </div>
         <div
-          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+          id="getBonusCard"
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-3 rounded-xl px-1 py-3 hover:border-[#0874F2] hover:bg-[#F3F8FE] hover:font-bold hover:text-[#0874F2] hover:cursor-pointer"
         >
           <img src="assets/bonus1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Get Bonus</span>
         </div>
         <div
-          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+          id="payBillCard"
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3 hover:border-[#0874F2] hover:bg-[#F3F8FE] hover:font-bold hover:text-[#0874F2] hover:cursor-pointer"
         >
           <img src="assets/purse1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Pay Bill</span>
         </div>
         <div
-          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3"
+          id="transactionCard"
+          class="border-2 border-[#0808081a] flex flex-col items-center justify-center gap-2 rounded-xl px-1 py-3 hover:border-[#0874F2] hover:bg-[#F3F8FE] hover:font-bold hover:text-[#0874F2] hover:cursor-pointer"
         >
           <img src="assets/transaction1.png" alt="" />
           <span class="text-xs text-[#080808b3]">Transactions</span>
@@ -112,8 +119,8 @@
           <div class="flex flex-col">
             <label for="">Select A Bank</label>
             <select
-              class="select bg-[#F4F5F7] mt-2 rounded-3xl w-full"
               id="bankSelection"
+              class="select bg-[#F4F5F7] mt-2 rounded-3xl w-full"
             >
               <option disabled selected>Select bank</option>
               <option>IBBL bank</option>
@@ -124,33 +131,33 @@
           <div class="flex flex-col">
             <label for="">Bank Account Number</label>
             <input
+              id="bankNumber"
               type="text"
               placeholder="Enter 11 digit account number"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
-              id="bankNumber"
             />
           </div>
           <div class="flex flex-col">
             <label for="">Amount to Add</label>
             <input
+              id="addAmount"
               type="text"
               placeholder="Add Amount to withdraw"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
-              id="addAmount"
             />
           </div>
           <div class="flex flex-col">
             <label for="">Pin Number</label>
             <input
+              id="addPin"
               type="text"
               placeholder="Enter 4 digit pin number"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
-              id="addPin"
             />
           </div>
           <button
-            class="btn bg-[#0874F2] rounded-3xl text-white"
             id="addMoneyBtn"
+            class="btn bg-[#0874F2] rounded-3xl text-white mt-2"
           >
             Add Money
           </button>
@@ -168,33 +175,33 @@
           <div class="flex flex-col">
             <label for="">Agent Number</label>
             <input
+              id="agentNumber"
               type="text"
               placeholder="Enter 11 digit account number"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
-              id="agentNumber"
             />
           </div>
           <div class="flex flex-col">
             <label for="">Amount</label>
             <input
+              id="cashOutAmount"
               type="text"
               placeholder="Add Amount to withdraw"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
-              id="cashOutAmount"
             />
           </div>
           <div class="flex flex-col">
             <label for="">Pin Number</label>
             <input
+              id="cashOutPin"
               type="text"
               placeholder="Enter 4 digit pin number"
               class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
-              id="cashOutPin"
             />
           </div>
           <button
-            class="btn bg-[#0874F2] rounded-3xl text-white"
             id="cashOutBtn"
+            class="btn bg-[#0874F2] rounded-3xl text-white mt-2"
           >
             Withdraw Money
           </button>
@@ -202,8 +209,211 @@
       </div>
     </section>
 
+    <!-- Transfer Money sub (input) section -->
+    <section class="flex flex-col max-w-lg m-auto p-6" id="transferSection">
+      <div class="mb-5">
+        <h3 class="font-semibold text-lg">Transfer Money</h3>
+      </div>
+      <div class="flex flex-col rounded-3xl bg-white p-6">
+        <form action="" class="flex flex-col gap-3">
+          <div class="flex flex-col">
+            <label for="">User Account Number</label>
+            <input
+              id="userAccountNumber"
+              type="text"
+              placeholder="Enter 11 digit number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Amount</label>
+            <input
+              id="transferAmount"
+              type="text"
+              placeholder="Enter amount to transfer"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Pin Number</label>
+            <input
+              id="transferPin"
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <button
+            id="transferBtn"
+            class="btn bg-[#0874F2] rounded-3xl text-white mt-2"
+          >
+            Send Now
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Get Bonus sub (input) section -->
+    <section class="flex flex-col max-w-lg m-auto p-6" id="getBonusSection">
+      <div class="mb-5">
+        <h3 class="font-semibold text-lg">Get Bonus</h3>
+      </div>
+      <div class="flex flex-col rounded-3xl bg-white p-6">
+        <form action="" class="flex flex-col gap-3">
+          <div class="flex flex-col">
+            <label for="">Enter Bonus Coupon</label>
+            <input
+              id="getBonusCoupon"
+              type="text"
+              placeholder="Enter your coupon"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+
+          <button
+            id="getBonusBtn"
+            class="btn bg-[#0874F2] rounded-3xl text-white mt-2"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Pay bill sub (input) section -->
+    <section class="flex flex-col max-w-lg m-auto p-6" id="payBillSection">
+      <div class="mb-5">
+        <h3 class="font-semibold text-lg">Pay Bill</h3>
+      </div>
+      <div class="flex flex-col rounded-3xl bg-white p-6">
+        <form action="" class="flex flex-col gap-3">
+          <div class="flex flex-col">
+            <label for="">Select To Pay</label>
+            <select
+              id="payBankSelection"
+              class="select bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            >
+              <option disabled selected>Select bank</option>
+              <option>IBBL bank</option>
+              <option>Dutch bangla bank</option>
+              <option>City bank</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label for="">Biller Account Number</label>
+            <input
+              id="payBankNumber"
+              type="text"
+              placeholder="Enter 11 digit account number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Amount to Pay</label>
+            <input
+              id="payAmount"
+              type="text"
+              placeholder="Add Amount to pay"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="">Pin Number</label>
+            <input
+              id="payPin"
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#F4F5F7] mt-2 rounded-3xl w-full"
+            />
+          </div>
+          <button
+            id="payBtn"
+            class="btn bg-[#0874F2] rounded-3xl text-white mt-2"
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- latest payment history section -->
+    <section
+      class="flex flex-col max-w-lg m-auto p-6 gap-3"
+      id="transactionSection"
+    >
+      <div class="mb-5 flex items-center justify-between">
+        <h3 class="font-semibold text-lg">Latest Payment</h3>
+        <button class="bg-transparent text-[#08080880] cursor-pointer p-2">
+          View All
+        </button>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="bg-white flex items-center justify-between p-4 rounded-xl">
+          <div class="flex items-center justify-center gap-4">
+            <div class="bg-[#0808080d] p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="" />
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-[#080808b3]">
+                Electricity Bill
+              </h3>
+              <span class="text-xs text-[#080808b3]">Today 01:44 AM</span>
+            </div>
+          </div>
+          <div>
+            <button class="text-[#080808b3]">
+              <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white flex items-center justify-between p-4 rounded-xl">
+          <div class="flex items-center justify-center gap-4">
+            <div class="bg-[#0808080d] p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="" />
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-[#080808b3]">
+                Bank Deposit
+              </h3>
+              <span class="text-xs text-[#080808b3]">Today 01:44 AM</span>
+            </div>
+          </div>
+          <div>
+            <button class="text-[#080808b3]">
+              <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white flex items-center justify-between p-4 rounded-xl">
+          <div class="flex items-center justify-center gap-4">
+            <div class="bg-[#0808080d] p-3 rounded-full">
+              <img src="assets/wallet1.png" alt="" />
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-[#080808b3]">
+                Mobile Recharge
+              </h3>
+              <span class="text-xs text-[#080808b3]">Today 01:44 AM</span>
+            </div>
+          </div>
+          <div>
+            <button class="text-[#080808b3]">
+              <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- home javascript file -->
     <script src="add-money.js"></script>
     <script src="cash-out.js"></script>
+    <script src="transfer-money.js"></script>
+    <script src="get-bonus.js"></script>
+    <script src="pay-bill.js"></script>
+    <script src="transactions.js"></script>
+    <script src="log-out.js"></script>
   </body>
 </html>
