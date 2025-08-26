@@ -1,4 +1,4 @@
-// transaction history showing array
+// transaction history showing array(global variable)
 const transactionData = [];
 
 // by default add money is hidden---------->
@@ -285,6 +285,49 @@ document.getElementById("transferCard").addEventListener("click", function () {
       "text-[#0874F2]"
     );
   card.classList.add("border-[#0808081a]");
+
+  // transfer transaction history showing start
+  const transactionValue = {
+    name: "Transfer Money",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(transactionValue);
+
+  document
+    .getElementById("transferSection")
+    .addEventListener("click", function () {
+      const transactionShowing = document.getElementById("transactionShowing");
+      transactionShowing.innerHTML = "";
+
+      for (const newData of transactionData) {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="flex flex-col gap-4">
+          <div
+            class="bg-white flex items-center justify-between p-4 rounded-xl"
+          >
+            <div class="flex items-center justify-center gap-4">
+              <div class="bg-[#0808080d] p-3 rounded-full">
+                <img src="assets/wallet1.png" alt="" />
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-[#080808b3]">
+                  ${newData.name}
+                </h3>
+                <span class="text-xs text-[#080808b3]">${newData.date}</span>
+              </div>
+            </div>
+            <div>
+              <button class="text-[#080808b3]">
+                <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+        transactionShowing.appendChild(div);
+      }
+    });
 });
 
 // transfer money toggling
@@ -352,6 +395,49 @@ document.getElementById("getBonusCard").addEventListener("click", function () {
       "font-bold",
       "text-[#0874F2]"
     );
+
+  // transfer transaction history showing start
+  const transactionValue = {
+    name: "Get Bonus",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(transactionValue);
+
+  document
+    .getElementById("getBonusSection")
+    .addEventListener("click", function () {
+      const transactionShowing = document.getElementById("transactionShowing");
+      transactionShowing.innerHTML = "";
+
+      for (const newData of transactionData) {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="flex flex-col gap-4">
+          <div
+            class="bg-white flex items-center justify-between p-4 rounded-xl"
+          >
+            <div class="flex items-center justify-center gap-4">
+              <div class="bg-[#0808080d] p-3 rounded-full">
+                <img src="assets/wallet1.png" alt="" />
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-[#080808b3]">
+                  ${newData.name}
+                </h3>
+                <span class="text-xs text-[#080808b3]">${newData.date}</span>
+              </div>
+            </div>
+            <div>
+              <button class="text-[#080808b3]">
+                <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+        transactionShowing.appendChild(div);
+      }
+    });
 });
 
 // get bonus toggling
@@ -419,6 +505,49 @@ document.getElementById("payBillCard").addEventListener("click", function () {
       "font-bold",
       "text-[#0874F2]"
     );
+
+  // transfer transaction history showing start
+  const transactionValue = {
+    name: "Pay Bill",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(transactionValue);
+
+  document
+    .getElementById("payBillSection")
+    .addEventListener("click", function () {
+      const transactionShowing = document.getElementById("transactionShowing");
+      transactionShowing.innerHTML = "";
+
+      for (const newData of transactionData) {
+        const div = document.createElement("div");
+        div.innerHTML = `
+        <div class="flex flex-col gap-4">
+          <div
+            class="bg-white flex items-center justify-between p-4 rounded-xl"
+          >
+            <div class="flex items-center justify-center gap-4">
+              <div class="bg-[#0808080d] p-3 rounded-full">
+                <img src="assets/wallet1.png" alt="" />
+              </div>
+              <div>
+                <h3 class="text-base font-semibold text-[#080808b3]">
+                  ${newData.name}
+                </h3>
+                <span class="text-xs text-[#080808b3]">${newData.date}</span>
+              </div>
+            </div>
+            <div>
+              <button class="text-[#080808b3]">
+                <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+        transactionShowing.appendChild(div);
+      }
+    });
 });
 
 // pay bill toggling
@@ -474,3 +603,8 @@ document
     document.getElementById("getBonusSection").style.display = "none";
     document.getElementById("payBillSection").style.display = "none";
   });
+
+// log out function---------->
+document.getElementById("logOutBtn").addEventListener("click", function () {
+  window.location.href = "login.html";
+});
