@@ -32,6 +32,34 @@ document.getElementById("transferBtn").addEventListener("click", function (e) {
   }
 });
 
+// card focus styling
+document.getElementById("transferCard").addEventListener("click", function () {
+  const cardFocusStyle = document.getElementsByClassName("focusStyle");
+  for (const card of cardFocusStyle) {
+    card.classList.remove(
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+    card.classList.add("border-[#0808081a]");
+  }
+  document
+    .getElementById("transferCard")
+    .classList.remove("border-2", "border-[#0808081a]");
+
+  document
+    .getElementById("transferCard")
+    .classList.add(
+      "border-2",
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+  card.classList.add("border-[#0808081a]");
+});
+
 // transfer money toggling
 document.getElementById("transferCard").addEventListener("click", function () {
   document.getElementById("transferSection").style.display = "block";

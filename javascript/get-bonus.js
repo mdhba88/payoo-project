@@ -28,6 +28,33 @@ document.getElementById("getBonusBtn").addEventListener("click", function (e) {
   }
 });
 
+// card focus styling
+document.getElementById("getBonusCard").addEventListener("click", function () {
+  const cardFocusStyle = document.getElementsByClassName("focusStyle");
+  for (const card of cardFocusStyle) {
+    card.classList.remove(
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+    card.classList.add("border-[#0808081a]");
+  }
+  document
+    .getElementById("getBonusCard")
+    .classList.remove("border-2", "border-[#0808081a]");
+
+  document
+    .getElementById("getBonusCard")
+    .classList.add(
+      "border-2",
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+});
+
 // get bonus toggling
 document.getElementById("getBonusCard").addEventListener("click", function () {
   document.getElementById("getBonusSection").style.display = "block";

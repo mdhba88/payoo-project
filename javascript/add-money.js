@@ -31,6 +31,33 @@ document.getElementById("addMoneyBtn").addEventListener("click", function (e) {
   }
 });
 
+// card focus styling
+document.getElementById("addMoneyCard").addEventListener("click", function () {
+  const cardFocusStyle = document.getElementsByClassName("focusStyle");
+
+  for (const card of cardFocusStyle) {
+    card.classList.remove(
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+    card.classList.add("border-[#0808081a]");
+  }
+  document
+    .getElementById("addMoneyCard")
+    .classList.remove("border-[#0808081a]");
+
+  document
+    .getElementById("addMoneyCard")
+    .classList.add(
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+});
+
 // add money toggling
 document.getElementById("addMoneyCard").addEventListener("click", function () {
   document.getElementById("addMoneySection").style.display = "block";

@@ -32,6 +32,30 @@ document.getElementById("cashOutBtn").addEventListener("click", function (e) {
   }
 });
 
+// card focus styling
+document.getElementById("cashOutCard").addEventListener("click", function () {
+  const cardFocusStyle = document.getElementsByClassName("focusStyle");
+  for (const card of cardFocusStyle) {
+    card.classList.remove(
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+    card.classList.add("border-[#0808081a]");
+  }
+  document.getElementById("cashOutCard").classList.remove("border-[#0808081a]");
+
+  document
+    .getElementById("cashOutCard")
+    .classList.add(
+      "border-[#0874F2]",
+      "bg-[#F3F8FE]",
+      "font-bold",
+      "text-[#0874F2]"
+    );
+});
+
 // cash out toggling
 document.getElementById("cashOutCard").addEventListener("click", function () {
   document.getElementById("cashOutSection").style.display = "block";
